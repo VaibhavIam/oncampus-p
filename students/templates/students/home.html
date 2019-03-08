@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -7,52 +9,36 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<html class="">
+<html lang="en">
 
-    <head>
-        <title>Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|PT+Sans|Roboto|Roboto+Slab|Titillium+Web" rel="stylesheet">
-        <style class="cp-pen-styles">* { box-sizing:border-box; }
-
-</style>
-
-    </head>
+<head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
 
 <body>
 <div class="background"></div>
 <div class="background2"></div>
 <div class="loginForm">
+    {{ error }}
     <hgroup>
         <h1> Login </h1>
     </hgroup>
-    <form>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
         <div class="group">
-            <input type="text" class="bar">
-            <span class="highlight">
-
-          </span>
-            <span class="bar">
-
-          </span>
+            <input type="text" class="bar" name="username">
+            <span class="highlight"></span>
+            <span class="bar"></span>
             <label>Username</label>
         </div>
         <div class="group">
-            <input type="password">
-            <span class="highlight">
-
-          </span><span class="bar">
-
-      </span>
+            <input type="password" name="password">
+            <span class="highlight"></span>
+            <span class="bar"></span>
             <label>Password</label>
         </div>
-        <select>
-            <option value="0"> - - - - - - </option>
-            <option value="1">Student</option>
-            <option value="2">Faculty</option>
-
-        </select>
-        <button type="button" class="buttonui "> <span> Login </span>
+        <button type="submit" class="buttonui" value="Log in"> <span> Login </span>
         </button>
     </form>
 </div>

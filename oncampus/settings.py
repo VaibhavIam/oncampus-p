@@ -56,7 +56,7 @@ ROOT_URLCONF = 'oncampus.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['oncampus/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'oncampus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'oncampus_db',
+        'USER': 'postgres',
+        'PASSWORD': 'JOHANmadara',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

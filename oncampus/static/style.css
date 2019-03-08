@@ -24,7 +24,7 @@ label {  color: #999;   font-size: 18px;  font-weight: normal;  position: absolu
 
 /* active */
 
-input:focus ~ label, input.used ~ label {  top: -15px;  -webkit-transform: scale(.75);          transform: scale(.75); left: -2px;  color: #4a89dc;}
+input:focus ~ label, input.used ~ label {  top: -25px;  -webkit-transform: scale(.75);          transform: scale(.75); left: -2px;  color: #4a89dc;}
 
 /* Underline */
 .bar {  position: relative;  display: block;  width: 90%;}
